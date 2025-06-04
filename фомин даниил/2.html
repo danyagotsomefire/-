@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700" />
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /* Main container styles */
+      .main-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 1920px;
+        background: #f6f7f7;
+      }
+      
+      /* Header section */
+      .header-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        height: 1000px;
+        overflow: hidden;
+        background: #f6f7f7;
+      }
+      
+      .header-background {
+        box-sizing: border-box;
+        width: 100%;
+        background: url("assets/5.png") 50% / cover no-repeat;
+        border: none;
+      }
+      
+      .header-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 100%;
+        background: #feffff;
+        box-shadow: 5px 10px 20px rgba(35, 63, 104, 0.15);
+      }
+      
+      .contact-bar {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 1170px;
+        height: 100px;
+      }
+      
+      .company-info {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .main-heading {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 600 32px Montserrat, sans-serif;
+        color: #1d1d1b;
+      }
+      
+      .location-text {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 14px Montserrat, sans-serif;
+        color: #606060;
+      }
+      
+      .phone-contact {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      
+      .icon-container {
+        box-sizing: border-box;
+        display: flex;
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+      }
+      
+      /* Navigation */
+      .nav-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        align-self: center;
+        justify-content: center;
+        width: 1170px;
+        padding-right: 375px;
+        padding-left: 375px;
+        background: #4fadff;
+      }
+      
+      .nav-links {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background: #4fadff;
+      }
+      
+      .nav-item {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #f6f7f7;
+      }
+      
+      .nav-item-active {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #feffff;
+      }
+      
+      /* Hero section */
+      .hero-container {
+        box-sizing: border-box;
+        width: 100%;
+        padding-right: 375px;
+        padding-left: 375px;
+      }
+      
+      .hero-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 870px;
+        padding-top: 200px;
+        padding-bottom: 264px;
+      }
+      
+      .hero-text-block {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .callout-banner {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 10px 30px;
+        background: #feffff;
+        border-radius: 5px;
+      }
+      
+      .callout-text {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #0074d9;
+        opacity: 0.7;
+      }
+      
+      .hero-heading {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 700 70px/70px Montserrat, sans-serif;
+        color: #feffff;
+        text-align: left;
+      }
+      
+      .hero-subheading {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #feffff;
+        text-align: left;
+        opacity: 0.7;
+      }
+      
+      .cta-button {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 196px;
+        min-width: 196px;
+        height: 62px;
+        font: 400 16px Montserrat, sans-serif;
+        color: #f6f7f7;
+        cursor: pointer;
+        background: #0074d9;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      /* Benefits section */
+      .benefits-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 833px;
+        background: #f6f7f7;
+      }
+      
+      .benefits-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 1172px;
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      
+      .section-heading {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 700 40px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: center;
+      }
+      
+      .benefits-grid {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 40px;
+      }
+      
+      .benefits-column {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      
+      .benefits-row {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .benefit-card {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px;
+        background: #feffff;
+        border-radius: 5px;
+        box-shadow: 5px 10px 20px rgba(35, 63, 104, 0.15);
+      }
+      
+      .card-heading {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: left;
+      }
+      
+      .card-text {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 400 16px/21.5px Montserrat, sans-serif;
+        color: #606060;
+        text-align: left;
+      }
+      
+      .benefits-image {
+        box-sizing: border-box;
+        display: block;
+        flex: 1 1 auto;
+        align-self: stretch;
+        max-width: initial;
+        height: 584px;
+        border: none;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      
+      /* Services section */
+      .services-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 833px;
+        background: #eceded;
+      }
+      
+      .services-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 1170px;
+        padding-top: 100px;
+        padding-bottom: 94px;
+      }
+      
+      .services-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .service-card {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: hidden;
+        background: #feffff;
+        border-radius: 5px;
+      }
+      
+      .service-image {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        align-self: stretch;
+        max-width: initial;
+        height: 300px;
+        border: none;
+        object-fit: cover;
+      }
+      
+      .service-details {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        align-self: stretch;
+        justify-content: flex-start;
+        padding: 30px;
+        background: #feffff;
+      }
+      
+      .service-info {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .price-row {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .service-price {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #1d1d1b;
+      }
+      
+      .service-cta {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-end;
+        min-width: 193px;
+      }
+      
+      .cta-link {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #0074d9;
+      }
+      
+      /* Process section */
+      .process-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 626px;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        background: #f6f7f7;
+      }
+      
+      .process-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 1170px;
+      }
+      
+      .process-card {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px;
+        background: #feffff;
+        border-radius: 5px;
+        box-shadow: 5px 10px 20px rgba(35, 63, 104, 0.15);
+      }
+      
+      .process-step {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 700 40px Montserrat, sans-serif;
+        color: #4fadff;
+        text-align: left;
+      }
+      
+      .process-button {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        align-self: stretch;
+        width: 210px;
+        min-width: 210px;
+        height: 62px;
+        font: 400 16px Montserrat, sans-serif;
+        color: #f6f7f7;
+        cursor: pointer;
+        background: #0074d9;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      .process-description {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        align-self: stretch;
+        height: 132px;
+        padding: 0;
+        margin: 0;
+        font: 400 16px/21.5px Montserrat, sans-serif;
+        color: #606060;
+        text-align: left;
+      }
+      
+      /* Discount section */
+      .discount-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 620px;
+        overflow: hidden;
+        background: #eceded;
+      }
+      
+      .discount-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 1170px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+      
+      .discount-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      
+      .discount-text {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .discount-heading {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 700 40px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: left;
+      }
+      
+      .discount-subheading {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #606060;
+        text-align: left;
+      }
+      
+      .discount-button {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 230px;
+        min-width: 230px;
+        height: 62px;
+        font: 400 16px Montserrat, sans-serif;
+        color: #f6f7f7;
+        cursor: pointer;
+        background: #0074d9;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      .discount-image {
+        box-sizing: border-box;
+        display: block;
+        flex: 1 1 auto;
+        max-width: initial;
+        height: 500px;
+        border: none;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      
+      /* Portfolio section */
+      .portfolio-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 903px;
+        overflow: hidden;
+        background: #f6f7f7;
+      }
+      
+      .portfolio-container {
+        box-sizing: border-box;
+        width: 1170px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+      
+      .portfolio-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 40px;
+        background: #eceded;
+        border-radius: 20px;
+      }
+      
+      .portfolio-header {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: flex-start;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .portfolio-title {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .portfolio-subtitle {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #0074d9;
+        text-align: left;
+      }
+      
+      .portfolio-nav {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .nav-button {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background: #0074d9;
+        border-radius: 5px;
+      }
+      
+      .portfolio-features {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 1080px;
+      }
+      
+      .feature-item {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .bullet-point {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 10px;
+        max-width: initial;
+        height: 10px;
+      }
+      
+      .feature-text {
+        flex: 1 1 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #606060;
+        text-align: left;
+      }
+      
+      .portfolio-image {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 1090px;
+        max-width: initial;
+        height: 270px;
+      }
+      
+      .portfolio-summary {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30px;
+        background: #feffff;
+        border-radius: 20px;
+        box-shadow: 5px 10px 20px rgba(35, 63, 104, 0.15);
+      }
+      
+      .summary-icon {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 70px;
+        max-width: initial;
+        height: 70px;
+      }
+      
+      .summary-details {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .summary-text {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #606060;
+        text-align: left;
+      }
+      
+      .portfolio-total {
+        box-sizing: border-box;
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 450px;
+        padding: 30px;
+        background: #feffff;
+        border-radius: 20px;
+        box-shadow: 5px 10px 20px rgba(35, 63, 104, 0.15);
+      }
+      
+      .total-text {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #606060;
+      }
+      
+      /* Testimonials section */
+      .testimonials-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 487px;
+        padding-right: 375px;
+        padding-left: 375px;
+        background: #f6f7f7;
+      }
+      
+      .testimonials-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        width: 1170px;
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      
+      .testimonials-header {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      
+      .testimonials-heading {
+        flex: 1 1 auto;
+        padding: 0;
+        margin: 0;
+        font: 700 40px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: left;
+      }
+      
+      .testimonial-card {
+        box-sizing: border-box;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px;
+        background: #feffff;
+        border-radius: 5px;
+      }
+      
+      .testimonial-author {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .author-avatar {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 70px;
+        max-width: initial;
+        height: 70px;
+        border: none;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .author-date {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 400 14px Montserrat, sans-serif;
+        color: #4fadff;
+        text-align: left;
+      }
+      
+      /* Contact form section */
+      .contact-form-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 371px;
+        background: #4fadff;
+      }
+      
+      .form-container {
+        box-sizing: border-box;
+        width: 1170px;
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      
+      .form-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 30px;
+        background: #feffff;
+        border-radius: 5px;
+        box-shadow: 0px 20px 40px rgba(35, 63, 104, 0.3);
+      }
+      
+      .form-input {
+        box-sizing: border-box;
+        flex: 1 1 auto;
+        min-width: 390px;
+        height: 62px;
+        padding-left: 20px;
+        font: 400 16px Montserrat, sans-serif;
+        text-align: left;
+        background: #feffff;
+        border: 1px solid #d8d9d9;
+        border-radius: 5px;
+      }
+      
+      .form-input::placeholder {
+        color: #606060;
+      }
+      
+      .form-button {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        width: 270px;
+        min-width: 270px;
+        height: 62px;
+        font: 400 16px Montserrat, sans-serif;
+        color: #feffff;
+        cursor: pointer;
+        background: #0074d9;
+        border: none;
+        border-radius: 5px;
+      }
+      
+      /* Documents section */
+      .documents-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 711px;
+        background: #f6f7f7;
+      }
+      
+      .documents-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      
+      .documents-header {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        align-items: flex-end;
+        justify-content: flex-start;
+        width: 1170px;
+      }
+      
+      .documents-grid {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 1170px;
+      }
+      
+      .document-image {
+        box-sizing: border-box;
+        display: block;
+        flex: 0 0 auto;
+        align-self: stretch;
+        max-width: initial;
+        height: 386px;
+        border: none;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      
+      .document-description {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 400 16px/21.5px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: center;
+      }
+      
+      /* Map section */
+      .map-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        align-self: stretch;
+        justify-content: center;
+        height: 700px;
+        overflow: hidden;
+        background: #f8fdfe;
+      }
+      
+      .map-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: initial;
+        height: 700px;
+        padding-right: 670px;
+        background: url("assets/map.jpg") 50% / cover no-repeat;
+        border: none;
+      }
+      
+      .map-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 500px;
+        padding-top: 53px;
+        padding-bottom: 52px;
+      }
+      
+      .map-card {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px;
+        background: #feffff;
+        border-radius: 10px;
+      }
+      
+      .contact-info {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .contact-detail {
+        flex: 1 1 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 16px/21.5px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: left;
+      }
+      
+      .phone-number {
+        flex: 1 1 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 16px Montserrat, sans-serif;
+        color: #1d1d1b;
+        text-align: left;
+      }
+      
+      .social-section {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      
+      .social-text {
+        flex: 0 0 auto;
+        align-self: stretch;
+        padding: 0;
+        margin: 0;
+        font: 500 20px Montserrat, sans-serif;
+        color: #606060;
+        text-align: center;
+      }
+      
+      .social-icons {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .social-icon {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #48c95f;
+        border-radius: 500px;
+      }
+      
+      .icon-image {
+        display: flex;
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        color: #feffff;
+      }
+      
+      .telegram-icon {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding-right: 3px;
+        background: #27a6e5;
+        border-radius: 500px;
+      }
+      
+      .small-icon {
+        display: flex;
+        flex: 0 0 auto;
+        width: 20px;
+        height: 20px;
+        color: #feffff;
+      }
+      
+      /* Footer */
+      .footer {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        justify-content: flex-start;
+        height: 86px;
+        overflow: hidden;
+        background: #05161f;
+      }
+      
+      .footer-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: space-between;
+        min-width: 1170px;
+        height: 86px;
+        padding-top: 31px;
+      }
+      
+      .footer-text {
+        flex: 0 0 auto;
+        padding: 0;
+        margin: 0;
+        font: 400 20px Futura PT;
+        color: #f8fdfe;
+        opacity: 0.25;
+      }
+      
+      .footer-logo {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      
+      .logo-image {
+        box-sizing: border-box;
+        display: block;
+        width: 110px;
+        max-width: initial;
+        height: 16px;
+        margin-left: 9.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: inline-block; width: 1920px" data-ignore="used only for top most containter width">
+      <div class="main-container">
+        <div class="header-container">
+          <div class="header-background">
+            <div class="header-content">
+              <div class="contact-bar">
+                <div class="company-info">
+                  <p class="main-heading">Откачка септика</p>
+                  <p class="location-text">В Пушкинском районе</p>
+                </div>
+                <div class="phone-contact">
+                  <div class="icon-container">
+                    <img src="assets/phone.jpg">
+                  </div>
+                  <p class="main-heading">+7 (936) 100-31-31</p>
+                </div>
+              </div>
+              <div class="nav-container">
+                <div class="nav-links">
+                  <p class="nav-item">Преимущества</p>
+                  <p class="nav-item">Услуги</p>
+                  <p class="nav-item">Этапы работы</p>
+                  <p class="nav-item">Портфолио</p>
+                  <p class="nav-item">Отзывы</p>
+                  <p class="nav-item">Документы</p>
+                  <p class="nav-item-active">Контакты</p>
+                </div>
+              </div>
+            </div>
+            <div class="hero-container">
+              <div class="hero-content">
+                <div class="hero-text-block">
+                  <div class="callout-banner">
+                    <p class="callout-text">Для звонка наберите номер +7 (936) 100-31-31</p>
+                  </div>
+                  <p class="hero-heading">Откачка септика <br />в Пушкинском районе</p>
+                  <p class="hero-subheading">Для современного мира граница обучения кадров не оставляет шанса для как самодостаточных, так и внешне зависимых концептуальных решений.</p>
+                </div>
+                <button class="cta-button">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="benefits-section">
+          <div class="benefits-container">
+            <p class="section-heading">Преимущества</p>
+            <div class="benefits-grid">
+              <div class="benefits-column">
+                <div class="benefits-row">
+                  <div class="benefit-card">
+                    <p class="card-heading">Оперативность</p>
+                    <p class="card-text">Приезжаем на откачку в течении часа после оформления заявки</p>
+                  </div>
+                  <div class="benefit-card">
+                    <p class="card-heading">Безопасно</p>
+                    <p class="card-text">Используем обрабатывающие средства</p>
+                  </div>
+                </div>
+                <div class="benefits-row">
+                  <div class="benefit-card">
+                    <p class="card-heading">Качественно</p>
+                    <p class="card-text">Все работы выполнит опытный сертифицированный мастер</p>
+                  </div>
+                  <div class="benefit-card">
+                    <p class="card-heading">Не дорого</p>
+                    <p class="card-text">Вот уже 3 года мы не повышаем цены на обслуживание и ремонт септиков</p>
+                  </div>
+                </div>
+                <div class="benefits-row">
+                  <div class="benefit-card">
+                    <p class="card-heading">Умеем всё</p>
+                    <p class="card-text">Обслуживаем все модели аэрационных станций, гибридных станций и септиков</p>
+                  </div>
+                  <div class="benefit-card">
+                    <p class="card-heading">Надёжно</p>
+                    <p class="card-text">Мы используем только оригинальные запчасти. Ваш септик всегда как новый.</p>
+                  </div>
+                </div>
+              </div>
+              <img src="assets/3.png" class="benefits-image" />
+            </div>
+          </div>
+        </div>
+        
+        <div class="services-section">
+          <div class="services-container">
+            <div class="services-content">
+              <p class="section-heading">Услуги нашей компании</p>
+              <div class="benefits-row">
+                <div class="service-card">
+                  <img src="assets/5.png" class="service-image" />
+                  <div class="service-details">
+                    <div class="service-info">
+                      <p class="card-heading">Откачка, чистка и ремонт септиков</p>
+                      <p class="card-text">При откачке септика не следует откачивать весь ил со дна, чтобы остались нужные бактерии для его заражения</p>
+                    </div>
+                    <div class="price-row">
+                      <p class="service-price">от 1200 р.</p>
+                      <div class="service-cta">
+                        <p class="cta-link">Оставить заявку</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-card">
+                  <img src="assets/2.png" class="service-image" />
+                  <div class="service-details">
+                    <div class="service-info">
+                      <p class="card-heading">Откачка выгребных ям</p>
+                      <p class="card-text">Для откачки выгребной ямы может понадобиться вода для ее разжижения</p>
+                    </div>
+                    <div class="price-row">
+                      <p class="service-price">от 1200 р.</p>
+                      <div class="service-cta">
+                        <p class="cta-link">Оставить заявку</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service-card">
+                  <img src="assets/4.png" class="service-image" />
+                  <div class="service-details">
+                    <div class="service-info">
+                      <p class="card-heading">Ассенизаторская машина</p>
+                      <p class="card-text">Откачка жидких бытовых отходов при необходимости (ЖБО)</p>
+                    </div>
+                    <div class="price-row">
+                      <p class="service-price">от 1200 р.</p>
+                      <div class="service-cta">
+                        <p class="cta-link">Оставить заявку</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="process-section">
+          <div class="process-container">
+            <p class="section-heading">Этапы работы</p>
+            <div class="benefits-row">
+              <div class="process-card">
+                <p class="process-step">01/</p>
+                <div class="service-info">
+                  <p class="card-heading">Онлайн заявка</p>
+                  <p class="card-text">В своём стремлении улучшить пользовательский опыт мы упускаем, что элементы политического.</p>
+                </div>
+                <button class="process-button">Заказать машину</button>
+              </div>
+              <div class="process-card">
+                <p class="process-step">02/</p>
+                <div class="service-info">
+                  <p class="card-heading">Звонок менеджера</p>
+                  <p class="process-description">Разнообразный и богатый опыт говорит нам, что начало повседневной работы по формированию позиции не оставляет.</p>
+                </div>
+              </div>
+              <div class="process-card">
+                <p class="process-step">03/</p>
+                <div class="service-info">
+                  <p class="card-heading">Откачка</p>
+                  <p class="process-description">И нет сомнений, что явные признаки победы институционализации неоднозначны и будут объявлены нарушающими.</p>
+                </div>
+              </div>
+              <div class="process-card">
+                <p class="process-step">04/</p>
+                <div class="service-info">
+                  <p class="card-heading">Оплата</p>
+                  <p class="process-description">В своём стремлении повысить качество жизни, они забывают, что дальнейшее развитие различных форм деятельности.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="discount-section">
+          <div class="discount-container">
+            <div class="discount-content">
+              <div class="discount-text">
+                <div class="service-info">
+                  <p class="discount-heading">Скидка 10%</p>
+                  <p class="discount-subheading">Скидка 10% на первый выезд</p>
+                  <p class="card-text">Сложно сказать, почему интерактивные прототипы призваны к ответу. Банальные, но неопровержимые выводы, а также стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, объективно рассмотрены соответствующими инстанциями. А ещё сделанные на базе.</p>
+                </div>
+                <button class="discount-button">Оставить заявку</button>
+              </div>
+              <img src="assets/5.png" class="discount-image" />
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-section">
+          <div class="portfolio-container">
+            <div class="portfolio-content">
+              <div class="portfolio-header">
+                <div class="portfolio-title">
+                  <p class="portfolio-subtitle">Выполненные работы</p>
+                  <p class="discount-heading">Название работы</p>
+                </div>
+                <div class="portfolio-nav">
+                  <div class="nav-button">
+                    <button class="left-button"></button>
+                  </div>
+                  <div class="nav-button">
+                    <button class="right-button"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-features">
+                <p class="card-heading">Характеристики</p>
+                <div class="benefits-row">
+                  <div class="portfolio-title">
+                    <div class="feature-item">
+                      <img src="assets/tochka.png" class="bullet-point" />
+                      <p class="feature-text">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div class="feature-item">
+                      <img src="assets/tochka.png" class="bullet-point" />
+                      <p class="feature-text">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div class="feature-item">
+                      <img src="assets/tochka.png" class="bullet-point" />
+                      <p class="feature-text">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                  </div>
+                  <div class="portfolio-title">
+                    <div class="feature-item">
+                      <img src="assets/tochka.png" class="bullet-point" />
+                      <p class="feature-text">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div class="feature-item">
+                      <img src="assets/tochka.png" class="bullet-point" />
+                      <p class="feature-text">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div class="feature-item">
+                      <img src="assets/tochka.png" class="bullet-point" />
+                      <p class="feature-text">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="assets/5.png" class="portfolio-image" />
+              <div class="benefits-row">
+                <div class="portfolio-summary">
+                  <img src="assets/paper.jpg" class="summary-icon" />
+                  <div class="summary-details">
+                    <p class="card-heading">Материалы</p>
+                    <p class="summary-text">4000 руб.</p>
+                  </div>
+                </div>
+                <div class="portfolio-summary">
+                  <img src="assets/instriment.jpg" class="summary-icon" />
+                  <div class="summary-details">
+                    <p class="card-heading">Работа</p>
+                    <p class="summary-text">5000 руб.</p>
+                  </div>
+                </div>
+                <div class="portfolio-total">
+                  <img src="assets/instriment.jpg" class="summary-icon" />
+                  <div class="summary-details">
+                    <p class="card-heading">Итого</p>
+                    <p class="total-text">9000 руб.</p>
+                  </div>
+                  <button class="cta-button">Оставить заявку</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonials-section">
+          <div class="testimonials-container">
+            <div class="testimonials-header">
+              <p class="testimonials-heading">Отзывы наших клиентов</p>
+              <div class="portfolio-nav">
+                <div class="nav-button">
+                  <button class="left-button"></button>
+                </div>
+                <div class="nav-button">
+                  <button class="right-button"></button>
+                </div>
+              </div>
+            </div>
+            <div class="benefits-grid">
+              <div class="testimonial-card">
+                <div class="testimonial-author">
+                  <img src="assets/avater.jpg" class="author-avatar" />
+                  <div class="summary-details">
+                    <p class="card-heading">Денис Смирнов</p>
+                    <p class="author-date">10.10.2019</p>
+                  </div>
+                </div>
+                <p class="card-text">Имеется спорная точка зрения, гласящая примерно следующее: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом —&nbsp; заблокированы в рамках своих.</p>
+              </div>
+              <div class="testimonial-card">
+                <div class="testimonial-author">
+                  <img src="assets/avater.jpg" class="author-avatar" />
+                  <div class="summary-details">
+                    <p class="card-heading">Денис Смирнов</p>
+                    <p class="author-date">10.10.2019</p>
+                  </div>
+                </div>
+                <p class="card-text">Имеется спорная точка зрения, гласящая примерно следующее: базовые сценарии поведения пользователей формируют глобальную экономическую сеть и при этом —&nbsp; заблокированы в рамках своих.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-section">
+          <div class="form-container">
+            <div class="form-content">
+              <p class="section-heading">Оставьте заявку на звонок</p>
+              <div class="benefits-row">
+                <input placeholder="Имя" type="text" class="form-input form-input::placeholder" />
+                <input placeholder="Телефон" type="text" class="form-input form-input::placeholder" />
+                <button class="form-button">Отправить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="documents-section">
+          <div class="documents-content">
+            <div class="documents-header">
+              <p class="testimonials-heading">Документы и сертификаты</p>
+              <div class="portfolio-nav">
+                <div class="nav-button">
+                  <button class="left-button"></button>
+                </div>
+                <div class="nav-button">
+                  <button class="right-button"></button>
+                </div>
+              </div>
+            </div>
+            <div class="documents-grid">
+              <div class="portfolio-title">
+                <img src="assets/sertificat.jpg" class="document-image" />
+                <p class="document-description">Только сплочённость команды профессионалов сделала своё дело</p>
+              </div>
+              <div class="portfolio-title">
+                <img src="assets/sertificat.jpg" class="document-image" />
+                <p class="document-description">Только сплочённость команды профессионалов сделала своё дело</p>
+              </div>
+              <div class="portfolio-title">
+                <img src="assets/sertificat.jpg" class="document-image" />
+                <p class="document-description">Только сплочённость команды профессионалов сделала своё дело</p>
+              </div>
+              <div class="portfolio-title">
+                <img src="assets/sertificat.jpg" class="document-image" />
+                <p class="document-description">Только сплочённость команды профессионалов сделала своё дело</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="map-section">
+          <div class="map-container">
+            <div class="map-content">
+              <div class="map-card">
+                <div class="service-info">
+                  <p class="section-heading">Контакты</p>
+                  <div class="contact-info">
+                    <div class="feature-item">
+                      <img src="assets/watch.jpg">
+                      <p class="contact-detail">Приём заказов:<br />Ежедневно с 08:00 до 22:00</p>
+                    </div>
+                    <div class="feature-item">
+                      <img src="assets/cal.jpg">
+                      <p class="contact-detail">Оплата по договору наличными/безналичными, с НДС и без НДС</p>
+                    </div>
+                    <div class="feature-item">
+                      <img src="assets/geo.jpg">
+                      <p class="contact-detail">Московская область, г. Пушкин, <br />ул. Красноармейская, д. 16А</p>
+                    </div>
+                    <div class="price-row">
+                      <div class="portfolio-title">
+                        <div class="feature-item">
+                          <img src="assets/email.jpg">
+                          <p class="phone-number">name@email.com</p>
+                        </div>
+                        <div class="feature-item">
+                          <img src="assets/phone.jpg">
+                          <p class="phone-number">+7 (936) 100-31-31</p>
+                        </div>
+                      </div>
+                      <div class="portfolio-title">
+                        <div class="feature-item">
+                          <img src="assets/phone.jpg">
+                          <p class="phone-number">+7 (936) 200-31-31</p>
+                        </div>
+                        <div class="feature-item">
+                          <img src="assets/phone.jpg">
+                          <p class="phone-number">+7 (926) 600-11-16</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="social-section">
+                  <p class="social-text">Пишите нам в социальных сетях:</p>
+                  <div class="social-icons">
+                    <div class="social-icon">
+                      <img src="assets/watsapp.jpg">
+                    </div>
+                    <div class="telegram-icon">
+                      <img src="assets/Telegram.jpg">
+                    </div>
+                  </div>
+                </div>
+                <button class="cta-button">Заказать звонок</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer">
+          <div class="footer-content">
+            <p class="footer-text">Политика конфиденциальности</p>
+            <div class="footer-logo">
+              <p class="footer-text">Сайт разработан</p>
+              <img src="assets/logo.jpg" class="logo-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
